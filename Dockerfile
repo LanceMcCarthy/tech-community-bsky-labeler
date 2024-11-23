@@ -5,4 +5,4 @@ EXPOSE 4101
 WORKDIR /build
 COPY . .
 RUN npm install
-CMD ["node", "npm run start"]
+CMD ["/bin/sh", "npx tsx src/main.ts"]
