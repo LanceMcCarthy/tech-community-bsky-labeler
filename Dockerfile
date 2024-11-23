@@ -2,9 +2,9 @@ FROM node:23alpine AS base
 
 WORKDIR /build
 
-COPY package*.json ./
-
 RUN curl -fsSL https://bun.sh/install | bash
+
+COPY package*.json ./
 
 RUN bun i
 
