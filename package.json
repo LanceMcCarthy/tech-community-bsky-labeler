@@ -29,7 +29,7 @@
     "typescript-eslint": "^8.15.0"
   },
   "dependencies": {
-    "@atproto/api": "^0.13.16",
+    "@atproto/api": "^0.13.18",
     "@skyware/bot": "^0.3.7",
     "@skyware/jetstream": "^0.2.0",
     "@skyware/labeler": "^0.1.13",
