@@ -1,4 +1,4 @@
-FROM node:23alpine AS base
+FROM node:23-alpine3.19 AS base
 
 WORKDIR /build
 

@@ -1,4 +1,4 @@
-name: Blazor (with Reporting)
+name: Publish Labeler
 
 on:
   workflow_dispatch:
