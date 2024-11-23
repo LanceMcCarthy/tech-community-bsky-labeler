@@ -1,46 +1,27 @@
 import { Label } from './types.js';
 
-export const DELETE = 'insert-rkey-of-delete-post-here';
+export const DELETE = '3lbmzwq24ou2v';
 export const LABEL_LIMIT = 1;
 export const LABELS: Label[] = [
   {
-    rkey: 'insert-rkey-here',
-    identifier: 'earth',
+    rkey: '3lbmzwpwao42v',
+    identifier: 'microsoft-mvp',
     locales: [
-      { lang: 'en', name: 'Earth 🌎', description: 'Earth'},
-      { lang: 'pt-BR', name: 'Terra 🌎', description: 'Terra'},
+      { lang: 'en', name: 'MS MVP 🏆', description: 'A current Microsoft MVP award recipient. For more information, visit https://mvp.microsoft.com.'}
     ]
   },
   {
-    rkey: 'insert-rkey-here',
-    identifier: 'fire',
+    rkey: '3lbmzwpxlrw2k',
+    identifier: 'microsoft-rd',
     locales: [
-      { lang: 'en', name: 'Fire 🔥', description: 'Fire'},
-      { lang: 'pt-BR', name: 'Fogo 🔥', description: 'Fogo'},
+      { lang: 'en', name: 'MS RD 🏆', description: 'A current Microsoft Regional Director award recipient. For more information, visit https://mvp.microsoft.com/en-us/RD.'}
     ]
   },
   {
-    rkey: 'insert-rkey-here',
-    identifier: 'air',
+    rkey: '3lbmzwpyypg2k',
+    identifier: 'google-gde',
     locales: [
-      { lang: 'en', name: 'Air 💨', description: 'Air'},
-      { lang: 'pt-BR', name: 'Ar 💨', description: 'Ar'},
+      { lang: 'en', name: 'GDE 🏆', description: 'A current Google Developer Expert award recipient. For more information, visit https://developers.google.com/community/experts/.'}
     ]
-  },
-  {
-    rkey: 'insert-rkey-here',
-    identifier: 'water',
-    locales: [
-      { lang: 'en', name: 'Water 💧', description: 'Water'},
-      { lang: 'pt-BR', name: 'Água 💧', description: 'Água'},
-    ]
-  },
-  {
-    rkey: 'insert-rkey-here',
-    identifier: 'love',
-    locales: [
-      { lang: 'en', name: 'Love 💞', description: 'Love'},
-      { lang: 'pt-BR', name: 'Amor 💞', description: 'Amor'},
-    ]
-  },
+  }
 ];
