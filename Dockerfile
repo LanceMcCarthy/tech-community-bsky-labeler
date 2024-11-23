@@ -1,4 +1,4 @@
-FROM node:23-alpine3.19 AS base
+FROM node:23-bookworm AS base
 
 WORKDIR /build
 
