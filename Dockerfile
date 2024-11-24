@@ -2,7 +2,12 @@ FROM node:23-bookworm AS base
 EXPOSE 4100
 EXPOSE 4101
 
+RUN curl -fsSL https://bun.sh/install | bash
+
 COPY package.json .
-RUN npm install
+
+RUN bun i
+
 COPY . .
-CMD ["npx tsx src/main.ts"]
+
+CMD ["node", "bun run start"]
