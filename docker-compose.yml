@@ -1,0 +1,7 @@
+services:
+  app:
+    image: 'ghcr.io/lancemccarthy/bsky-labeler:latest'
+    restart: unless-stopped
+    ports:
+      - '4100:4100'
+      - '4101:4101'
