@@ -2,21 +2,10 @@ FROM oven/bun:1 AS base
 WORKDIR /usr/src/app
 EXPOSE 4100
 EXPOSE 4101
-
-FROM base AS install
-RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --production
-
-# copy production dependencies and source code into final image
-FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
 COPY . .
-
-# run the app
-USER bun
-CMD ["bun", "run", "start"]
-#ENTRYPOINT [ "npx", "tsx", "src/main.ts" ]
+RUN bun install
+#CMD ["bun", "run", "start"]
+ENTRYPOINT [ "npx", "tsx", "src/main.ts" ]
 
 # FROM oven/bun:1 AS base
 # WORKDIR /usr/src/app
