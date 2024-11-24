@@ -1,4 +1,4 @@
-FROM node:23-bookworm AS base
+FROM node:23-bullseye AS base
 SHELL ["/bin/bash", "-c"]
 EXPOSE 4100
 EXPOSE 4101
