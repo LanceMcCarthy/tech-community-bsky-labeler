@@ -4,8 +4,8 @@ EXPOSE 4100
 EXPOSE 4101
 COPY . .
 RUN bun install
-CMD ["bun", "run", "start"]
-#ENTRYPOINT [ "npx", "tsx", "src/main.ts" ]
+#CMD ["bun", "run", "src/main.ts"]
+ENTRYPOINT [ "bun", "run", "src/main.ts" ]
 
 # FROM oven/bun:1 AS base
 # WORKDIR /usr/src/app
