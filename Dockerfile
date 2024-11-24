@@ -1,10 +1,11 @@
 FROM oven/bun:1 AS base
+WORKDIR /usr/src/app
 EXPOSE 4100/tcp
 EXPOSE 4101/tcp
 
 COPY . .
 
-RUN bun install
+RUN bun i
 
 CMD ["npx tsx src/main.ts"]
 
