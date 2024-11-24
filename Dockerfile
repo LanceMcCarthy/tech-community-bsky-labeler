@@ -39,7 +39,8 @@ COPY --from=prerelease /usr/src/app/package.json .
 USER bun
 EXPOSE 4100
 EXPOSE 4101
-ENTRYPOINT [ "bun", "run", "main.ts" ]
+ENTRYPOINT [ "bun", "run", "src/main.ts" ]
+#CMD ["bun", "run", "start"]
 
 # FROM oven/bun:1 AS base
 # WORKDIR /usr/src/app
