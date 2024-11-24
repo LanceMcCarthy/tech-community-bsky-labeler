@@ -3,8 +3,8 @@ SHELL ["/bin/bash", "-c"]
 EXPOSE 4100
 EXPOSE 4101
 RUN curl -fsSL https://bun.sh/install | bash
-RUN source /home/lance/.bashrc
+RUN source /root/.bashrc
 COPY package.json .
 RUN bun i
 COPY . .
-CMD ["node", "bun run start"]
+CMD ["source /root/.bashrc && bun run start"]
