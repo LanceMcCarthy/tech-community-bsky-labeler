@@ -15,4 +15,4 @@ COPY . .
 
 # run the app
 USER bun
-ENTRYPOINT [ "bun", "run", "src/main.ts" ]
+CMD ["bun", "run", "start"]
