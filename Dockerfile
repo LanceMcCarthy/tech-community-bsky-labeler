@@ -6,7 +6,7 @@ EXPOSE 4101
 FROM base AS install
 RUN mkdir -p /temp/prod
 COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
+RUN cd /temp/prod && bun install --production
 
 # copy production dependencies and source code into final image
 FROM base AS release
@@ -15,8 +15,8 @@ COPY . .
 
 # run the app
 USER bun
-#CMD ["bun", "run", "start"]
-ENTRYPOINT [ "npx", "tsx", "src/main.ts" ]
+CMD ["bun", "run", "start"]
+#ENTRYPOINT [ "npx", "tsx", "src/main.ts" ]
 
 # FROM oven/bun:1 AS base
 # WORKDIR /usr/src/app
