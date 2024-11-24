@@ -1,18 +1,36 @@
 FROM oven/bun:1 AS base
-WORKDIR /usr/src/app
-EXPOSE 4100/tcp
-EXPOSE 4101/tcp
 
 FROM base AS install
-RUN mkdir -p /temp/prod
-COPY package.json bun.lockb /temp/prod/
-RUN cd /temp/prod && bun install --frozen-lockfile --production
+RUN mkdir -p /temp/dev
+COPY package.json bun.lockb /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
 # copy production dependencies and source code into final image
 FROM base AS release
-COPY --from=install /temp/prod/node_modules node_modules
-COPY . .
+COPY --from=install /temp/dev/node_modules node_modules
+COPY --from=prerelease ./src ./src
+COPY --from=prerelease package.json .
 
-# run the app
-USER bun
-CMD ["bun", "run", "start"]
+EXPOSE 4100
+EXPOSE 4101
+CMD [ "bun", "run", "start" ]
+
+
+# FROM oven/bun:1 AS base
+# WORKDIR /usr/src/app
+# EXPOSE 4100
+# EXPOSE 4101
+
+# FROM base AS install
+# RUN mkdir -p /temp/prod
+# COPY package.json bun.lockb /temp/prod/
+# RUN cd /temp/prod && bun install --frozen-lockfile --production
+
+# # copy production dependencies and source code into final image
+# FROM base AS release
+# COPY --from=install /temp/prod/node_modules node_modules
+# COPY . .
+
+# # run the app
+# USER bun
+# CMD ["bun", "run", "start"]
