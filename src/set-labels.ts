@@ -13,6 +13,7 @@ const loginCredentials: LoginCredentials = {
 const labelDefinitions: ComAtprotoLabelDefs.LabelValueDefinition[] = [];
 
 for (const label of LABELS) {
+  // Docs https://docs.bsky.app/docs/advanced-guides/moderation#label-values
   const labelValueDefinition: ComAtprotoLabelDefs.LabelValueDefinition = {
     identifier: label.identifier,
     severity: 'inform',
